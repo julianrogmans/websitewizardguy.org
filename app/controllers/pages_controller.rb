@@ -3,7 +3,11 @@ class PagesController < ApplicationController
   end
 
   def contact
-    redirect_to root_path
+    name = params[:name]
+    email = params[:email]
+    message = params[:message]
+    ContactMailer.send_contact_message(name, email, message).deliver
+    redirect_to root_path, notice: "Thank you for contacting. You'll here from me shortly"
   end
 
   def resume
