@@ -1,0 +1,92 @@
+<% modals = [
+    {
+      title: 'NWADEBS',
+      descrption: 'A hand built CMS designed to manage listings of mental and emotional healthcare professionals in different areas. Decent use of Javascript and Jquery for collapasable navigation. Built in PHP',
+      image: image_path('modal/nwadebs.png'),
+      active: 'active'
+    },
+    {
+      title: 'Rogue Book Exchange',
+      descrption: 'An inline CMS website built with the Laravel MVC framework, built to streamline the volunteer and donation process for the Rogue Book Exchange non profit. Design credit: Christina Amador.',
+      image: image_path('modal/rogue-book-exchange.png')
+    },
+    {
+      title: 'Travel Rogue',
+      descrption: 'A personal project built in Ruby on Rails with the concept of a local ride share program. Using devise authentication for user signup and backed by a solid database design this project is built for scaleability',
+      image: image_path('modal/travelrogue.png')
+    },
+    {
+      title: 'Scrum Flip Board',
+      descrption: 'An independant class project designed to be used as an online scrum flipboard manager. First Ruby on Rails project makes use of nested resource relationships and an elegant WYSIWYG editor',
+      image: image_path('modal/scrum-flip-board.png')
+    },
+    {
+      title: 'Housealive Community',
+      descrption: 'Hand built with HTML and CSS this community site is a static addon to the main wordpress site for housealive.org. Built with the original look and feel of the housealive website so that it feels as though it belongs.',
+      image: image_path('modal/housealive-community.png')
+    }
+  ] %>
+
+<div class="row">
+  <div class="col-sm-12 text-center">
+    <div class="panel panel-danger" id="homepage_panel">
+      <div class="panel-heading">
+        <h1 class="panel-title">
+          Get back to the basics!
+        </h1>
+        
+      </div>
+      <div class="panel-body">
+        <p>Hi! My name is Jules Rogmans.<br /><br />From the beginning of my carreer as a full-stack web developer it has been my dream to build simple elegant websites for people that want to give their business that extra clean designer edge.<br /><br />I hope to be able to do the same for you!</p>
+        <div class="row visible-xs">
+          <div class="col-sm-12">
+            <h4><i>Looking for a great website?</i></h4>
+            <a href="tel:5412920099" class="btn btn-warning" id="callBtn">Give Me A Call</a>
+          </div>
+          <br />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-8">
+    <h3>Highlights</h3>
+    <hr />
+    <div class="carousel slide" id="banner-carousel" data-ride="carousel">
+      <div class="carousel-inner" role="listbox">
+
+        <% modals.each do |modal| %>
+          <div class="item <%= modal.fetch(:active, '') %> text-center">
+            <%= image_tag(modal[:image]) %>
+            <div class="website-caption">
+              <h3><%= modal[:title] %></h3>
+              <p><%= modal[:descrption] %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      
+        <a class="left carousel-control" href="#banner-carousel" role="button" data-slide="prev">
+          <span aria-hidden="true">&#x21DA;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#banner-carousel" role="button" data-slide="next">
+          <span aria-hidden="true">&#x21DB;</span>
+          <span class="sr-only">Next</span>
+        </a>
+    </div>
+  </div>
+  
+  <div class="col-sm-4">
+    <h3>Jules Rogmans</h3>
+    <hr />
+    <%= image_tag 'portrait/jules-rogmans-portrait.png', :class => 'img-responsive' %>
+    <hr />
+    <p>Born: Southern California<br />Currently Living: Southern Oregon<br />College Major: AAS Web Development</p>
+    <p class="show-for-small-only">
+      Likes: Nature, Computers, Website Design, Website Development, Computer Programming, Playing Music
+    </p>
+  </div>
+</div>

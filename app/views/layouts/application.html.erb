@@ -5,10 +5,68 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+          <%= image_tag 'logo/websitewizardguy-nav-logo.png', :class => 'navbar-logo' %>
+        </a>
+      </div>
 
-<%= yield %>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="nav navbar-nav hidden-xs">
+          <%= render partial: 'social_icons', locals: {
+            link_class: '',
+            tooltip_pos: 'bottom'
+            } %>
+        </ul>
+
+        <script type="text/javascript">
+          $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+          })
+        </script>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <%= link_to "Home", root_path %>
+          </li>
+          <li>
+            <%= link_to 'Resume', resume_path %>
+          </li>
+          <li>
+            <%= link_to "Contact", '#', 'data-toggle' => 'modal', 'data-target' => '#contact' %>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav visible-xs">
+          <%= render partial: 'social_icons', locals: {
+            link_class: 'pull-left',
+            tooltip_pos: 'top'
+            } %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <%= yield %>
+    <hr />
+  </div>
+  
+  <%= render 'contact_modal' %>
+
+  <script type="text/javascript">
+    size_nav_logo();
+  </script>
 
 </body>
 </html>

@@ -16,3 +16,18 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body>div.container {
+  padding-top: 75px;
+}
+
+.navbar {
+
+  li {
+    font-size: 1.5em;
+
+    a {
+      margin-top: 5%;
+    }
+  }
+}

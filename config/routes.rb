@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  root 'pages#index'
+
+  post 'contact' => 'pages#contact', as: :contact
+
+  get 'resume' => 'pages#resume', as: :resume
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

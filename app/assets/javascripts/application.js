@@ -15,3 +15,24 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+/* Author: Jules Rogmans  */
+/* Version: 1.0 */
+/* Date Created: @date */
+
+"use strict";
+
+window.onload = function(event) {
+  size_nav_logo();
+}
+
+function size_nav_logo () {
+  $('.navbar-logo').css({
+    'height': ($('.navbar').innerHeight() / 10) * 8,
+    'margin-top': -$('.navbar').innerHeight() / 8
+  });
+}
+
+window.onresize = function () {
+  size_nav_logo();
+}

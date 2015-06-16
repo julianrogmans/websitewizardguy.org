@@ -1,0 +1,20 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.website-caption {
+  padding: 4px 15px;
+}
+
+#homepage_panel
+{
+  font-size: 135%;
+  h1
+  {
+    font-size: 185%;
+  }
+  a
+  {
+    font-size: inherit;
+  }
+}
