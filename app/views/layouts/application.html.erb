@@ -58,6 +58,11 @@
     </div>
   </nav>
   <div class="container">
+    <% unless notice.nil? %>
+      <div class="alert alert-success text-center">
+        <%= notice %>
+      </div>
+    <% end %>
     <%= yield %>
     <hr />
   </div>
